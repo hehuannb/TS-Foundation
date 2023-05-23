@@ -109,9 +109,9 @@ class Model(nn.Module):
         # print(x_enc.shape)
         B, L, M = x_enc.shape
         input_x = rearrange(x_enc, 'b l m -> b m l')
-        input_x = self.padding_patch_layer(input_x)
-        input_x = input_x.unfold(dimension=-1, size=self.patch_size, step=self.stride)
-        input_x = rearrange(input_x, 'b m n p -> b n (p m)')
+        # input_x = self.padding_patch_layer(input_x)
+        # input_x = input_x.unfold(dimension=-1, size=self.patch_size, step=self.stride)
+        # input_x = rearrange(input_x, 'b m n p -> b n (p m)')
         
         outputs = self.enc_embedding(input_x, None)
         
