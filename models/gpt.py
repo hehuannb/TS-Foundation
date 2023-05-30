@@ -70,7 +70,7 @@ class Model(nn.Module):
         
         outputs = self.enc_embedding(input_x, None)
         
-        outputs = self.gpt2(inputs_embeds=outputs).last_hidden_state
+        # outputs = self.gpt2(inputs_embeds=outputs).last_hidden_state
 
         outputs = self.act(outputs).reshape(B, -1)
         outputs = self.ln_proj(outputs)
